@@ -1,10 +1,10 @@
 CXX = g++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = megaphone.cpp
+SRCS = phone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-EXEC = megaphone
+EXEC = phone
 
 all: $(EXEC)
 
