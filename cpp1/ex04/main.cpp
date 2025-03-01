@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     std::string s1 = argv[2];
     std::string s2 = argv[3];
 
-    std::ifstream inputFile(filename);
+    std::ifstream inputFile(filename.c_str());
     if (!inputFile) {
         std::cerr << "Error: Could not open file " << filename << std::endl;
         return 1;
@@ -33,14 +33,14 @@ int main(int argc, char *argv[])
 
     replaceString(content, s1, s2);
 
-    std::ofstream outputFile(filename + ".replace");
-    if (!outputFile) {
+    std::ofstream file2((filename + ".replace").c_str());
+    if (!file2) {
         std::cerr << "Error: Could not create output file " << filename << ".replace" << std::endl;
         return 1;
     }
 
-    outputFile << content;
-    outputFile.close();
+    file2 << content;
+    file2.close();
 
     return 0;
 }
