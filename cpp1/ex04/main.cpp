@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    std::string content((std::istreambuf_iterator<char>(inputFile)), std::istreambuf_iterator<char>());
+    std::string contentoffile((std::istreambuf_iterator<char>(inputFile)), std::istreambuf_iterator<char>());
     inputFile.close();
 
-    replaceString(content, s1, s2);
+    replaceString(contentoffile, s1, s2);
 
     std::ofstream file2((filename + ".replace").c_str());
     if (!file2) {
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    file2 << content;
+    file2 << contentoffile;
     file2.close();
 
     return 0;
