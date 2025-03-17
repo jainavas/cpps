@@ -6,7 +6,7 @@
 /*   By: jainavas <jainavas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:20:49 by jainavas          #+#    #+#             */
-/*   Updated: 2025/03/13 18:12:08 by jainavas         ###   ########.fr       */
+/*   Updated: 2025/03/17 01:35:34 by jainavas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ScalarConverter::convert(const std::string &input)
 		else {std::cout << "Is not displayable" << std::endl;}
 	}
 	else {std::cout << "impossible" << std::endl;}
-    if (!(iss >> i)) {std::cout << "int: impossible" << std::endl;}
+    if (!(i >= std::numeric_limits<int>::min() && i <= std::numeric_limits<int>::max())) {std::cout << "int: impossible" << std::endl;}
     else {std::cout << "int: " << i << std::endl;}
 	std::istringstream iss2(input);
     if (!(iss2 >> d)) {
