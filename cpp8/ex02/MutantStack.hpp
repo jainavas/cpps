@@ -6,7 +6,7 @@
 /*   By: jainavas <jainavas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 21:32:23 by jainavas          #+#    #+#             */
-/*   Updated: 2025/03/18 22:08:45 by jainavas         ###   ########.fr       */
+/*   Updated: 2025/03/21 19:18:06 by jainavas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class MutantStack : public std::stack<T>
 		}
 		MutantStack& operator=(const MutantStack& assign)
 		{
+			(void) assign;
 			return *this;
 		}
 		~MutantStack() {};
