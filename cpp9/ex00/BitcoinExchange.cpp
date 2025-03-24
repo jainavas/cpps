@@ -6,7 +6,7 @@
 /*   By: jainavas <jainavas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:28:00 by jainavas          #+#    #+#             */
-/*   Updated: 2025/03/20 21:42:03 by jainavas         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:42:33 by jainavas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ float BitcoinExchange::getSecond(std::string first) const
 	std::map<std::string, float>::const_iterator it = data.find(first);
 	if (it != this->data.end())
 		return it->second;
-	throw NotFound();
+	it = data.lower_bound(first);
+	if (it == data.begin())
+		throw NotFound();
+	if (it != data.end())
+		return it->second;
 	return 0.0f;
 }
 

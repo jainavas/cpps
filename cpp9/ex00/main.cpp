@@ -6,7 +6,7 @@
 /*   By: jainavas <jainavas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:31:40 by jainavas          #+#    #+#             */
-/*   Updated: 2025/03/21 19:14:43 by jainavas         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:43:38 by jainavas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,9 @@ bool debugEntry(std::string input)
 		return (std::cout << "Wrong entry. Not a '|' in the input.\n", 0);
 	if (!isValidDate(input.substr(0, input.find('|') - 1)))
 		return (std::cout << "Wrong date entry.\n", 0);
-	if (atof((input.substr(input.find('|') + 1, input.length()).c_str())) < 0)
-		return (std::cout << "Wrong entry, need to be a positive number.\n", 0);
+	float f = atof((input.substr(input.find('|') + 1, input.length()).c_str()));
+	if (f < 0 || f > 1000)
+		return (std::cout << "Wrong entry, need to be a positive number between 0 and 1000.\n", 0);
 	return (1);
 }
 
